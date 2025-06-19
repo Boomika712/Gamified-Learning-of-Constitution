@@ -1,0 +1,281 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3571AE, #52ACFF);
+  overflow: hidden;
+}
+
+.content .word {
+  user-select: none;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 15px; /* Reduced spacing to fit within the box */
+  margin-right: 0; /* Adjusted margin */
+  text-transform: uppercase;
+  color: #3571AE;
+  word-wrap: break-word; /* Enable word wrapping */
+  white-space: normal; /* Allow wrapping instead of forcing on one line */
+}
+
+.content .word.long {
+  font-size: 25px; /* Reduce font size for long words */
+  letter-spacing: 10px; /* Adjust letter spacing */
+}
+
+
+.container {
+  width: 440px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.1);
+  animation: popIn 1s ease-out;
+}
+
+.container h2 {
+  font-size: 26px;
+  font-weight: 600;
+  padding: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: linear-gradient(90deg, #3571AE, #52ACFF);
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.startArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.startBtn {
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  margin: 15px;
+  padding: 12px 0;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  width: calc(100% / 2 - 10px);
+  background: linear-gradient(90deg, #52ACFF, #3571AE);
+  transition: transform 0.3s ease, background 0.5s ease;
+}
+
+.startBtn:hover {
+  background: linear-gradient(90deg, #3571AE, #707d8b);
+  transform: scale(1.05);
+}
+
+.container .content {
+  display: none;
+  margin: 30px 20px 40px;
+}
+
+.content .word {
+  user-select: none;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 25px;
+  margin-right: -25px;
+  text-transform: uppercase;
+  color: #3571AE;
+}
+
+.content .details {
+  margin: 30px 0 25px;
+}
+
+.details p {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.details p b {
+  font-weight: bold;
+}
+
+.content input {
+  width: 100%;
+  height: 60px;
+  outline: none;
+  padding: 0 20px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content input:focus {
+  border: 1px solid #3571AE;
+  box-shadow: 0px 3px 6px rgba(53, 113, 174, 0.3);
+}
+
+.content input::placeholder {
+  color: #bbb;
+}
+
+.content .buttons {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.buttons button {
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px 0;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 6px;
+  width: calc(50% - 10px);
+  transition: all 0.3s ease;
+}
+
+.buttons button:active {
+  transform: scale(0.98);
+}
+
+.buttons .refresh-word {
+  background: linear-gradient(90deg, #6C757D, #707d8b);
+}
+
+.buttons .refresh-word:hover {
+  background: linear-gradient(90deg, #5f666d, #6C757D);
+}
+
+.buttons .check-word {
+  background: linear-gradient(90deg, #52ACFF, #3571AE);
+}
+
+.buttons .check-word:hover {
+  background: linear-gradient(90deg, #3571AE, #52ACFF);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.modal-wrong {
+  border: 3px solid #FF5C5C;
+}
+
+.modal-correct {
+  border: 3px solid #4CAF50;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.score-area {
+  padding-top: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.score {
+  color: #3571AE;
+}
+
+@media screen and (max-width: 470px) {
+  .container h2 {
+    font-size: 22px;
+    padding: 15px;
+  }
+
+  .content .word {
+    font-size: 30px;
+    letter-spacing: 18px;
+    margin-right: -18px;
+  }
+
+  .container .content {
+    margin: 20px 15px 30px;
+  }
+
+  .details p {
+    font-size: 16px;
+  }
+
+  .content input {
+    height: 55px;
+    font-size: 17px;
+  }
+
+  .buttons button {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+/* Animations */
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

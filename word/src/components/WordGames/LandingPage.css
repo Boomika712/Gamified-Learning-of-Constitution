@@ -1,0 +1,233 @@
+/* Reset and Basic Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  background: linear-gradient(120deg, #f3f4f6, #e9ebee);
+  overflow-x: hidden;
+}
+
+/* Landing Page */
+.landing-page {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* Header Section */
+.landing-header {
+  background-image: url('/public/indian-republic-day-celebration-digital-art-with-people.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 120px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: pulseGlow 4s infinite alternate ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.landing-header h1 {
+  font-size: 4em;
+  font-weight: 700;
+  z-index: 1;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-header p {
+  font-size: 1.4em;
+  z-index: 1;
+  position: relative;
+  animation: fadeIn 1.5s ease-out;
+  color: #f9f9f9;
+}
+
+/* Glow Effect for Header */
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  to {
+    box-shadow: 0 12px 35px rgba(255, 105, 135, 0.5);
+  }
+}
+
+/* Games Overview Section */
+.games-overview {
+  margin: 80px 0;
+}
+
+.games-overview h2 {
+  font-size: 3em;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 50px;
+  animation: fadeIn 2s ease-out;
+  background: linear-gradient(90deg, #6dd5fa, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Game Cards */
+.game-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  animation: slideIn 2s ease-out;
+}
+
+.game-card {
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.game-card:nth-child(1) {
+  background-image: url('/public/word\ guessing\ game.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.game-card:nth-child(2) {
+  background-image: url('/public/word\ scrambled\ game.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.game-card:nth-child(3) {
+  background-image: url('/public/word\ search\ game.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-card:hover::before {
+  opacity: 1;
+}
+
+.game-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.game-card h3 {
+  font-size: 2.2em;
+  font-weight: 600;
+  color: #fffefe;
+  margin-bottom: 20px;
+  z-index: 1;
+  position: relative;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.game-card p {
+  font-size: 1.1em;
+  color: #f9f9f9;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+/* Game Buttons */
+.game-card button {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.game-card button:hover {
+  background: linear-gradient(45deg, #0072ff, #00c6ff);
+  box-shadow: 0 6px 18px rgba(0, 118, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* Footer */
+.landing-footer {
+  background-color: #222;
+  color: #f1f1f1;
+  padding: 30px;
+  font-size: 1.2em;
+  margin-top: 80px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.landing-footer a {
+  color: #00c6ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.landing-footer a:hover {
+  color: #0072ff;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

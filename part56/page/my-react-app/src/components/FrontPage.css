@@ -1,0 +1,50 @@
+.body {
+  background-color: white;
+
+}
+.frontpage-container {
+  text-align: center;
+  padding: 20px;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  height: 300px;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds some shadow to the cards */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto; /* Ensures the image maintains its aspect ratio */
+  border-radius: 8px;
+}
+
+.card h2 {
+  margin: 10px 0;
+}
+
+.card p {
+  color: black;
+}
+.card h2 {
+  color: black;
+}
